@@ -3,6 +3,7 @@ module.exports = {
   extends: ["airbnb-base/legacy", "plugin:vue/recommended", "prettier", "plugin:gridsome/recommended"],
   plugins: ["gridsome", "prettier"],
   rules: {
+    "no-param-reassign": 0,
     "prettier/prettier": "error",
     // Web Componentsと差別化を図るため
     "vue/component-name-in-template-casing": "error",
@@ -32,38 +33,4 @@ module.exports = {
       }
     ]
   },
-  globals: {
-    TimelineLite: false,
-    TimelineMax: false,
-    TweenLite: false,
-    TweenMax: false,
-    Back: false,
-    Bounce: false,
-    Circ: false,
-    Cubic: false,
-    Ease: false,
-    EaseLookup: false,
-    Elastic: false,
-    Expo: false,
-    Linear: false,
-    Power0: false,
-    Power1: false,
-    Power2: false,
-    Power3: false,
-    Power4: false,
-    Quad: false,
-    Quart: false,
-    Quint: false,
-    RoughEase: false,
-    Sine: false,
-    SlowMo: false,
-    SteppedEase: false,
-    Strong: false,
-    Draggable: false,
-    SplitText: false,
-    VelocityTracker: false,
-    CSSPlugin: false,
-    ThrowPropsPlugin: false,
-    BezierPlugin: false
-  }
 };

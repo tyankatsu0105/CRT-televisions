@@ -10,3 +10,7 @@
     $color2 $border-width * 2
   );
 }
+
+@mixin chromatic-aberration-text($x: 0, $y: 0, $color: #000) {
+  text-shadow: $x $y $color;
+}

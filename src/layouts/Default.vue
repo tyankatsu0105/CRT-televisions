@@ -1,29 +1,28 @@
 <template>
 	<div class="Default">
-		<VHeader />
-		<transition-group
-			name="page"
-			tag="main"
-			appear
-		>
-			<div
-				key="main"
-				class="Default_Contents"
+		<div class="Default_Container">
+			<HeaderOpenButton />
+			<VHeader />
+			<transition
+				name="page"
+				appear
 			>
-				<slot></slot>
-			</div>
-		</transition-group>
-		<VFooter />
+				<main>
+					<slot></slot>
+				</main>
+			</transition>
+		</div>
 	</div>
 </template>
 
 <script>
 import VHeader from "@/containers/VHeader.vue";
-import VFooter from "@/containers/VFooter.vue";
+import HeaderOpenButton from "@/basics/HeaderOpenButton.vue";
+
 export default {
   components: {
     VHeader,
-    VFooter
+    HeaderOpenButton
   },
   metaInfo: {
     htmlAttrs: {
@@ -33,23 +32,76 @@ export default {
 };
 </script>
 
+
 <style lang="scss" scoped>
 @import "@/styles/utility/transition-page.scss";
+
+@keyframes glitch-background {
+  $steps: 50;
+  @for $i from 0 through $steps {
+    #{percentage($i / $steps)} {
+      clip-path: inset(
+        percentage(random(100) / 100) 0 percentage(random(100) / 100)
+      );
+    }
+  }
+}
+
+@keyframes glitch-text-1 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i / $steps)} {
+      clip-path: inset(
+        percentage(random(100) / 100) 0 percentage(random(100) / 100)
+      );
+    }
+  }
+}
+
+@keyframes glitch-text-2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i / $steps)} {
+      clip-path: inset(
+        percentage(random(100) / 100) 0 percentage(random(100) / 100)
+      );
+    }
+  }
+}
+
 .Default {
-  display: grid;
-  grid-template-rows: 1fr 50px;
-  grid-template-columns: auto;
-  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 
-  &_Contents {
-    max-width: 1500px;
-    padding: 56px 36px;
-    margin: 0 auto;
+  &_Container {
+    @include background-stripe($border-width: 2px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw - 50px);
+    height: calc(100vh - 50px);
+    padding: 20px;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-radius: 20px;
 
-    @include mq-xs {
-      max-width: 100vw;
-      padding: 24px 15px;
-      margin: 88px auto 24px;
+    &::before {
+      @include background-stripe(
+        $color1: rgba(41, 41, 41, 0.062),
+        $border-width: 1px
+      );
+
+      position: absolute;
+      top: 1px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      animation: glitch-background 0.5s linear 0s infinite alternate-reverse;
     }
   }
 }
