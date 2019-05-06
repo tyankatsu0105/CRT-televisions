@@ -1,0 +1,9 @@
+.page-enter-active,
+.page-leave-active {
+  transition: $tst-heavy;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
