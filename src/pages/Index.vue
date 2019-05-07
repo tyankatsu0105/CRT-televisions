@@ -23,40 +23,15 @@ export default {
 
 
 <style lang="scss" scoped>
-@keyframes glitch-background {
-  $steps: 50;
-  @for $i from 0 through $steps {
-    #{percentage($i / $steps)} {
-      clip-path: inset(
-        percentage(random(100) / 100) 0 percentage(random(100) / 100)
-      );
-    }
-  }
-}
-
-@keyframes glitch-text-1 {
-  $steps: 20;
-  @for $i from 0 through $steps {
-    #{percentage($i / $steps)} {
-      clip-path: inset(
-        percentage(random(100) / 100) 0 percentage(random(100) / 100)
-      );
-    }
-  }
-}
-
-@keyframes glitch-text-2 {
-  $steps: 20;
-  @for $i from 0 through $steps {
-    #{percentage($i / $steps)} {
-      clip-path: inset(
-        percentage(random(100) / 100) 0 percentage(random(100) / 100)
-      );
-    }
-  }
-}
+@import "@/styles/utility/glitch.scss";
 
 .Index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
   &_Heading {
     position: relative;
     font-size: 10rem;

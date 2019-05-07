@@ -6,11 +6,23 @@
 			v-if="isHeaderOpen"
 			class="VHeader"
 		>
-			<nav class="VHeader-Menu">
+			<HeaderCloseButton />
+			<nav class="VHeader_Menu">
 				<ul class="VHeader_MenuList">
 					<li class="VHeader_MenuListItem">
-						<g-link :to="{name: 'about'}">
-							About
+						<g-link
+							:to="{name: 'home'}"
+							@click.native="shouldHeaderOpen(false)"
+						>
+							HOME
+						</g-link>
+					</li>
+					<li class="VHeader_MenuListItem">
+						<g-link
+							:to="{name: 'about'}"
+							@click.native="shouldHeaderOpen(false)"
+						>
+							ABOUT
 						</g-link>
 					</li>
 				</ul>
@@ -20,10 +32,18 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
+import HeaderCloseButton from "@/basics/HeaderCloseButton.vue";
+
 export default {
+  components: {
+    HeaderCloseButton
+  },
   computed: {
     ...mapState("VHeader", ["isHeaderOpen"])
+  },
+  methods: {
+    ...mapActions("VHeader", ["shouldHeaderOpen"])
   }
 };
 </script>
@@ -38,6 +58,32 @@ export default {
   z-index: $z-index-header-menu;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  overflow-y: scroll;
+  background-color: rgba(180, 180, 180, 0.9);
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+
+  &_Menu {
+    position: relative;
+    padding: 130px 20px;
+  }
+
+  &_MenuListItem {
+    padding: 15px;
+    font-size: 5rem;
+    font-weight: bold;
+    color: $color-accent;
+    &:hover {
+      color: $color-black;
+      background-color: $color-accent;
+    }
+  }
 }
 </style>

@@ -1,9 +1,5 @@
+@import "@/styles/utility/glitch.scss";
 .page-enter-active,
 .page-leave-active {
-  transition: $tst-heavy;
-}
-
-.page-enter,
-.page-leave-to {
-  transform: scale(2);
+  animation: glitch-background-2 $tst-heavy linear 0s;
 }
