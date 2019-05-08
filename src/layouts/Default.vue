@@ -61,8 +61,6 @@ export default {
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 20px;
-    overflow-y: scroll;
     border-radius: 20px;
 
     &::before {
@@ -84,6 +82,8 @@ export default {
   &_Contents {
     width: 100%;
     height: 100%;
+    padding: 20px;
+    overflow-y: scroll;
   }
 }
 

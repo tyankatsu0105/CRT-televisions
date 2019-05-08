@@ -3,6 +3,7 @@ module.exports = {
   extends: ["airbnb-base/legacy", "plugin:vue/recommended", "prettier", "plugin:gridsome/recommended"],
   plugins: ["gridsome", "prettier"],
   rules: {
+    "gridsome/require-g-link-to": "error",
     "no-param-reassign": 0,
     "prettier/prettier": "error",
     // Web Componentsと差別化を図るため
