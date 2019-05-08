@@ -76,13 +76,15 @@ export default {
   }
 
   &_MenuListItem {
-    padding: 15px;
     font-size: 5rem;
     font-weight: bold;
     color: $color-accent;
-    &:hover {
-      color: $color-black;
-      background-color: $color-accent;
+    a {
+      padding: 15px;
+      &:hover {
+        color: $color-black;
+        background-color: $color-accent;
+      }
     }
   }
 }
