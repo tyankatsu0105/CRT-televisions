@@ -1,93 +1,50 @@
 <template>
-	<div class="Default">
-		<transition
-			name="page"
-			appear
-		>
-			<div
-				class="Default_Container"
-				:class="{'_openHeader': isHeaderOpen}"
-			>
-				<HeaderOpenButton />
-				<VHeader />
-				<main class="Default_Contents">
-					<slot></slot>
-				</main>
-			</div>
-		</transition>
-	</div>
+  <div class="layout">
+    <header class="header">
+      <strong>
+        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
+      </strong>
+      <nav class="nav">
+        <g-link class="nav__link" to="/">Home</g-link>
+        <g-link class="nav__link" to="/about/">About</g-link>
+      </nav>
+    </header>
+    <slot/>
+  </div>
 </template>
 
-<script>
-import { mapState } from "vuex";
-
-import VHeader from "@/containers/VHeader.vue";
-import HeaderOpenButton from "@/basics/HeaderOpenButton.vue";
-
-export default {
-  components: {
-    VHeader,
-    HeaderOpenButton
-  },
-  computed: {
-    ...mapState("VHeader", ["isHeaderOpen"])
-  },
-  metaInfo: {
-    htmlAttrs: {
-      lang: "ja"
-    }
-  }
-};
-</script>
-
-
-<style lang="scss" scoped>
-@import "@/styles/utility/transition-page.scss";
-@import "@/styles/utility/glitch.scss";
-
-.Default {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  padding: 25px;
-
-  &_Container {
-    @include background-stripe($border-width: 2px);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-
-    &::before {
-      @include background-stripe(
-        $color1: rgba(41, 41, 41, 0.062),
-        $border-width: 1px
-      );
-
-      position: absolute;
-      top: 1px;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      content: "";
-      animation: glitch-background-1 0.5s linear 0s infinite alternate-reverse;
-    }
-  }
-
-  &_Contents {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    overflow-y: scroll;
+<static-query>
+query {
+  metadata {
+    siteName
   }
 }
+</static-query>
 
-._openHeader {
-  overflow: hidden;
+<style>
+body {
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  margin:0;
+  padding:0;
+  line-height: 1.5;
+}
+
+.layout {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 80px;
+}
+
+.nav__link {
+  margin-left: 20px;
 }
 </style>

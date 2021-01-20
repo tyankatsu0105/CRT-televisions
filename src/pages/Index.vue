@@ -1,69 +1,33 @@
 <template>
-	<Layout>
-		<div class="Index">
-			<h1
-				class="Index_Heading"
-				data-text="Tyankatsu"
-			>
-				Tyankatsu
-			</h1>
-		</div>
-	</Layout>
+  <Layout>
+
+    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
+    <g-image alt="Example image" src="~/favicon.png" width="135" />
+
+    <h1>Hello, world!</h1>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
+    </p>
+
+    <p class="home-links">
+      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
+      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
+    </p>
+
+  </Layout>
 </template>
 
 <script>
-import Layout from "@/layouts/Default.vue";
-
 export default {
-  components: {
-    Layout
+  metaInfo: {
+    title: 'Hello, world!'
   }
-};
+}
 </script>
 
-
-<style lang="scss" scoped>
-@import "@/styles/utility/glitch.scss";
-
-.Index {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-
-  &_Heading {
-    position: relative;
-    font-size: 10rem;
-    font-weight: bold;
-    color: #fff;
-
-    &::before,
-    &::after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      content: attr(data-text);
-    }
-
-    &::before {
-      @include chromatic-aberration-text(
-        $x: -2px,
-        $color: $chromatic-aberration-color-main
-      );
-      left: 1px;
-      animation: glitch-text-1 2s linear 0s infinite alternate-reverse;
-    }
-    &::after {
-      @include chromatic-aberration-text(
-        $x: -2px,
-        $color: $chromatic-aberration-color-sub
-      );
-      left: -1px;
-      animation: glitch-text-2 2s linear 0s infinite alternate-reverse;
-    }
-  }
+<style>
+.home-links a {
+  margin-right: 1rem;
 }
 </style>
