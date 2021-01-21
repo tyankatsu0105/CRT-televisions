@@ -2,6 +2,8 @@
   "name": "crt-televisions",
   "private": true,
   "scripts": {
+    "precommit": "lint-staged",
+    "commit": "git-cz",
     "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore"
@@ -15,10 +17,9 @@
   "devDependencies": {
     "autoprefixer": "^10.2.3",
     "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.18.0",
-    "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-gridsome": "^1.6.1",
-    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.4.1",
     "lint-staged": "^10.5.3",
     "node-sass": "^5.0.0",
