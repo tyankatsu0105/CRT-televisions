@@ -29,6 +29,7 @@ module.exports = {
     }
   ],
   siteName: "CRT televisions",
+  siteUrl: 'https://crt-televisions.netlify.app',
   chainWebpack: config => {
     const oneOfsMap = config.module.rule("scss").oneOfs.store;
     oneOfsMap.forEach(item => {
