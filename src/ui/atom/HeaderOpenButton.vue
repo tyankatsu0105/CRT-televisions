@@ -20,10 +20,10 @@ export default {
 <style lang="scss" scoped>
 .HeaderOpenButton {
   position: fixed;
-  top: calc(30px + 25px);
-  right: calc(30px + 25px);
+  top: calc(25px + 1rem);
+  right: calc(25px + 1rem);
   z-index: $z-index-header;
-  font-size: 5rem;
+  font-size: $font-size-header-nav;
   color: $color-accent;
 }
 </style>

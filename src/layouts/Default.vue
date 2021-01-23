@@ -10,9 +10,11 @@
 			>
 				<HeaderOpenButton />
 				<VHeader />
-				<main class="Default_Contents">
-					<slot></slot>
-				</main>
+				<div class="Default_ContentsWrap">
+					<main class="Default_Contents">
+						<slot></slot>
+					</main>
+				</div>
 			</div>
 		</transition>
 	</div>
@@ -68,14 +70,21 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      content: "";
+      pointer-events: none;
+      content: "";;
       animation: glitch-background-1 0.5s linear 0s infinite alternate-reverse;
     }
+  }
+  &_ContentsWrap {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    padding-bottom: calc(25px + 72px);
+    overflow-y: scroll;
   }
   &_Contents {
     width: 100%;
     height: 100%;
-    padding: 20px;
     overflow-y: scroll;
   }
 }
