@@ -74,6 +74,54 @@
 				</li>
 			</ul>
 		</section>
+
+		<section class="About-Section">
+			<h2 class="About-Section_Heading">
+				Community
+			</h2>
+			<ul class="About-List">
+				<li class="About-ListItem">
+					<g-link
+						href="https://aniken.connpass.com/"
+						class="About-ListItem_Link"
+					>
+アニメーション研究会
+					</g-link>
+				</li>
+				<li class="About-ListItem">
+					<g-link
+						href="https://ffs.connpass.com/"
+						class="About-ListItem_Link"
+					>
+Frontend-Fukuoka.spec
+					</g-link>
+				</li>
+				<li class="About-ListItem">
+					<g-link
+						href="https://v-fukuoka.connpass.com/"
+						class="About-ListItem_Link"
+					>
+v-fukuoka
+					</g-link>
+				</li>
+			</ul>
+		</section>
+
+		<section class="About-Section">
+			<h2 class="About-Section_Heading">
+				Podcast
+			</h2>
+			<ul class="About-List">
+				<li class="About-ListItem">
+					<g-link
+						href="https://anchor.fm/fukuokazatsudanradio"
+						class="About-ListItem_Link"
+					>
+ちょっとお隣よかですか？ - 福岡IT系雑談ラジオ
+					</g-link>
+				</li>
+			</ul>
+		</section>
 	</Layout>
 </template>
 
