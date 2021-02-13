@@ -13,9 +13,9 @@ module.exports = {
       "error",
       {
         html: {
-          normal: "never"
-        }
-      }
+          normal: "never",
+        },
+      },
     ],
     "vue/no-multi-spaces": "error",
     "vue/no-confusing-v-for-v-if": "error",
@@ -27,9 +27,9 @@ module.exports = {
         singleline: 1,
         multiline: {
           max: 1,
-          allowFirstLine: false
-        }
-      }
-    ]
-  }
+          allowFirstLine: false,
+        },
+      },
+    ],
+  },
 };

@@ -85,7 +85,7 @@
 						href="https://aniken.connpass.com/"
 						class="About-ListItem_Link"
 					>
-アニメーション研究会
+						アニメーション研究会
 					</g-link>
 				</li>
 				<li class="About-ListItem">
@@ -93,7 +93,7 @@
 						href="https://ffs.connpass.com/"
 						class="About-ListItem_Link"
 					>
-Frontend-Fukuoka.spec
+						Frontend-Fukuoka.spec
 					</g-link>
 				</li>
 				<li class="About-ListItem">
@@ -101,7 +101,7 @@ Frontend-Fukuoka.spec
 						href="https://v-fukuoka.connpass.com/"
 						class="About-ListItem_Link"
 					>
-v-fukuoka
+						v-fukuoka
 					</g-link>
 				</li>
 			</ul>
@@ -117,7 +117,7 @@ v-fukuoka
 						href="https://anchor.fm/fukuokazatsudanradio"
 						class="About-ListItem_Link"
 					>
-ちょっとお隣よかですか？ - 福岡IT系雑談ラジオ
+						ちょっとお隣よかですか？ - 福岡IT系雑談ラジオ
 					</g-link>
 				</li>
 			</ul>
@@ -126,31 +126,30 @@ v-fukuoka
 </template>
 
 <script>
-import Layout from "~/layouts/Default.vue";
-import PageHeading from "~/ui/atom/PageHeading.vue";
-export default {
-  components: {
-    Layout,
-    PageHeading
-  }
-};
+  import Layout from "~/layouts/Default.vue";
+  import PageHeading from "~/ui/atom/PageHeading.vue";
+  export default {
+    components: {
+      Layout,
+      PageHeading,
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
-.About {
-  &-Section{
-    & + & {
-      margin-top: 12px;
+  .About {
+    &-Section {
+      & + & {
+        margin-top: 12px;
+      }
+      &_Heading {
+        font-size: 2rem;
+        font-weight: bold;
+      }
     }
-    &_Heading{
-      font-size: 2rem;
+
+    &-ListItem {
       font-weight: bold;
     }
   }
-
-  &-ListItem{
-    font-weight: bold;
-
-  }
-}
 </style>

@@ -2,7 +2,7 @@ module.exports = {
   extends: [
     "stylelint-config-sass-guidelines",
     "stylelint-config-recess-order",
-    "stylelint-config-prettier"
+    "stylelint-config-prettier",
   ],
   rules: {
     "order/properties-alphabetical-order": null,
@@ -11,10 +11,10 @@ module.exports = {
     "selector-no-qualifying-type": [
       true,
       {
-        ignore: ["attribute"]
-      }
+        ignore: ["attribute"],
+      },
     ],
     "scss/selector-no-redundant-nesting-selector": null,
-    "scss/at-import-partial-extension-blacklist": null
-  }
+    "scss/at-import-partial-extension-blacklist": null,
+  },
 };
