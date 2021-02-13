@@ -39,7 +39,7 @@
 
 <script>
   import { mapState, mapActions } from "vuex";
-  import HeaderCloseButton from "~/ui/atom/HeaderCloseButton";
+  import HeaderCloseButton from "~/ui/atoms/HeaderCloseButton.vue";
 
   export default {
     components: {

@@ -127,7 +127,7 @@
 
 <script>
   import Layout from "~/layouts/Default.vue";
-  import PageHeading from "~/ui/atom/PageHeading.vue";
+  import PageHeading from "~/ui/atoms/PageHeading.vue";
   export default {
     components: {
       Layout,

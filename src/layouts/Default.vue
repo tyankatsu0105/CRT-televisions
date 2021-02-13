@@ -23,7 +23,7 @@
 <script>
   import { mapState } from "vuex";
   import VHeader from "~/ui/components/VHeader.vue";
-  import HeaderOpenButton from "~/ui/atom/HeaderOpenButton";
+  import HeaderOpenButton from "~/ui/atoms/HeaderOpenButton.vue";
   export default {
     components: {
       VHeader,
