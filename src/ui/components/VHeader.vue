@@ -25,6 +25,14 @@
 							ABOUT
 						</g-link>
 					</li>
+					<li class="VHeader_MenuListItem">
+						<g-link
+							to="/posts"
+							@click.native="shouldHeaderOpen(false)"
+						>
+							Posts
+						</g-link>
+					</li>
 				</ul>
 			</nav>
 		</header>
